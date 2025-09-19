@@ -77,7 +77,10 @@ opentelemetry-util-http==0.51b0
 pandas==2.2.2
 pillow==10.3.0
 pip==24.0
-pydantic==2.7.4 
+pydantic>=2.4.2,<3.0.0
+# pydantic==2.7.4 
+langchain-google-genai
+python-multipart
 
 
 # --- ADDED: Essential packages that were missing ---
