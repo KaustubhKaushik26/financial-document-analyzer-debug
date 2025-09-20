@@ -35,7 +35,7 @@ With a stable environment, I proceeded to fix the bugs in each of the project's 
 ### 2.1 tools.py : 
 
 **Identified Issue:**  
-The tools available to the AI agents were not functional. The file contained placeholder classes that had no actual logic implemented. The primary tool for reading files would cause the application to crash with a NameError because of a missing library import.
+The tools available to the AI agents were not functional. The file contained placeholder classes that had no actual logic implemented. The primary tool for reading files was causing the application to crash with a NameError because of a missing library import.
 
 **Implemented Solution:**  
 All of the original, non-working code was removed. It was replaced with two standard, pre-built, and reliable tools from the crewai_tools library: `FileReadTool` to handle reading the content of the uploaded PDF, and `SerperDevTool` to allow the agents to perform internet searches.
@@ -44,7 +44,7 @@ All of the original, non-working code was removed. It was replaced with two stan
 ### 2.2 agents.py (The AI Team) :
 
 **Identified Issue:**  
-This file contained several critical errors that prevented the AI from working. The Language Model (LLM) was not being initialized correctly, which would cause a crash. The agents' tools were being assigned using an incorrect parameter name (`tool` instead of `tools`). Additionally, all agents were limited to a single step (`max_iter=1`), which severely restricted their ability to perform multi-step reasoning.
+This file contained several critical errors that prevented the AI from working. The LLM was not being initialized correctly, which was causing a crash. The agents' tools were being assigned using an incorrect parameter name (`tool` instead of `tools`). Additionally, all agents were limited to a single step (`max_iter=1`), which severely restricted their ability to perform multi-step reasoning.
 
 **Implemented Solution:**
 - The `LLM` class from crewai was imported and used to properly configure the Google Gemini model. This solved the complex authentication and API connection issues.  
@@ -95,7 +95,7 @@ This project is a multi-agent financial document analysis system built using Cre
 Follow these steps to set up and run the application on your computer.
 
 ## Prerequisites :
-- Python 3.9+
+- Python 3.10+
 - A tool to create a virtual environment, like `venv`
 - `uv` (a fast tool for installing Python packages)
 
